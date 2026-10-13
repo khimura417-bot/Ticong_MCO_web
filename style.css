@@ -1,0 +1,224 @@
+/* ==========================================
+   RESET & BASE STYLES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth; /* Smooth scrolling when clicking nav links */
+}
+
+:root {
+    --bg-color: #FAF6F0;       /* Warm sand background */
+    --text-color: #2C2520;     /* Deep charcoal brown text */
+    --primary: #C87A53;        /* Terracotta accent */
+    --secondary: #4A6B5D;      /* Sage green for academic feel */
+    --card-bg: #FFFFFF;        /* Pure white for sections */
+    --nav-bg: rgba(250, 246, 240, 0.95);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding-top: 70px; /* Space for fixed navbar */
+}
+
+/* ==========================================
+   NAVIGATION BAR
+   ========================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: var(--nav-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+    color: var(--primary);
+}
+
+/* ==========================================
+   LAYOUT & SECTIONS
+   ========================================== */
+.section {
+    padding: 80px 10%;
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+/* Specific Hero Setup */
+.hero {
+    text-align: center;
+    background: linear-gradient(135deg, #F3EAE0 0%, #EADBC8 100%);
+    border: none;
+    padding: 100px 5%;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #665A51;
+}
+
+.hero .intro {
+    margin-top: 30px;
+    font-style: italic;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Typography elements */
+h2 {
+    font-size: 2rem;
+    color: var(--secondary);
+    margin-bottom: 24px;
+    border-bottom: 3px solid var(--primary);
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+p {
+    margin-bottom: 16px;
+    font-size: 1.05rem;
+    color: #4A3F35;
+    text-align: justify;
+}
+
+strong {
+    color: var(--primary);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN (Mobile Friendly)
+   ========================================== */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none; /* We'll keep it simple for now, or use JS for menu toggle */
+    }
+    .section {
+        padding: 40px 5%;
+        margin: 20px 15px;
+    }
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Update this at the bottom of style.css so both sections use it */
+.history-block h3, .role-block h3 {
+    color: var(--primary);
+    margin-top: 24px;
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+
+/* ==========================================
+   MULTIMEDIA GALLERY STYLES
+   ========================================== */
+.gallery-intro {
+    margin-bottom: 30px;
+    font-style: italic;
+    color: #665A51;
+}
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+
+.gallery-card {
+    flex: 1;
+    min-width: 300px;
+    background-color: #FAF6F0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.gallery-card h3 {
+    font-size: 1.15rem;
+    color: var(--secondary);
+    margin-bottom: 12px;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;        /* Lets the image show fully without any cropping */
+    display: block;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+
+
+.card-caption {
+    font-size: 0.9rem;
+    color: #665A51;
+    text-align: left;
+    margin-bottom: 0;
+}
+
